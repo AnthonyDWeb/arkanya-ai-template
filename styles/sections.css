@@ -1,0 +1,103 @@
+.section {
+    width: 100%;
+    padding: 6rem 0;
+}
+
+.section-sm {
+    padding: 4rem 0;
+}
+
+.section-lg {
+    padding: 8rem 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.section-subtitle {
+    margin-top: 1rem;
+    opacity: 0.7;
+}
+
+.section-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+.hero {
+    min-height: calc(100vh - 80px);
+
+    display: flex;
+    align-items: center;
+}
+
+.hero-inner {
+    width: 100%;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero-title {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    margin-top: 1.5rem;
+
+    font-size: 1.1rem;
+
+    opacity: 0.8;
+
+    max-width: 540px;
+}
+
+.hero-actions {
+    margin-top: 2rem;
+
+    display: flex;
+    gap: 1rem;
+}
+
+.hero-button-primary {
+    padding: 0.9rem 1.6rem;
+
+    border-radius: 8px;
+
+    background: white;
+    color: black;
+
+    font-weight: 600;
+
+    transition: transform 0.15s ease;
+}
+
+.hero-button-primary:hover {
+    transform: translateY(-2px);
+}
+
+.hero-button-secondary {
+    padding: 0.9rem 1.6rem;
+
+    border-radius: 8px;
+
+    border: 1px solid rgba(255,255,255,0.3);
+
+    transition: background 0.2s ease;
+}
+
+.hero-button-secondary:hover {
+    background: rgba(255,255,255,0.08);
+}
