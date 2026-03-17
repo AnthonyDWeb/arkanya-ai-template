@@ -1,5 +1,5 @@
-import Hero from "../sections/hero"
-import {generateMetadataFromPath} from "../lib/seo/generate-metadata"
+import Hero from "@/components/sections/hero"
+import {generateMetadataFromPath} from "@/lib/seo/generate-metadata"
 
 export const metadata = generateMetadataFromPath("/")
 

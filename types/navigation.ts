@@ -3,6 +3,9 @@ export type NavigationItem = {
     href: string
     title?: string
     description?: string
+    image?: string
     index?: boolean
     sitemap?: boolean
-}
+    visible?: boolean
+    type?: "main" | "legal"
+};

@@ -1,0 +1,25 @@
+:root {
+
+    /* COLORS */
+    --color-bg: #ffffff;
+    --color-text: #0a0a0a;
+    --color-muted: #6b7280;
+
+    --color-primary: #000000;
+    --color-primary-contrast: #ffffff;
+
+    --color-border: #e5e5e5;
+
+    /* SPACING */
+    --container-max: 1400px;
+
+    /* RADIUS */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+
+    /* TRANSITIONS */
+    --transition-fast: 0.15s ease;
+    --transition: 0.25s ease;
+
+}

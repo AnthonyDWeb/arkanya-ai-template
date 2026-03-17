@@ -1,16 +1,15 @@
 import type {MetadataRoute} from "next"
 
-import {legalNavigation, navigation} from "../config/navigation"
-import {siteConfig} from "../config/site"
+import {getNavigation} from "@/lib/config/getNavigation"
+import {getSite} from "@/lib/config/getSite"
 
 export default function sitemap(): MetadataRoute.Sitemap {
 
-    const pages = [...navigation, ...legalNavigation]
+    const navigation = getNavigation()
+    const site = getSite()
 
-    const indexablePages = pages.filter((p) => p.index !== false)
-
-    return indexablePages.map((page) => ({
-        url: `${siteConfig.url}${page.href}`,
+    return navigation.map((page) => ({
+        url: `${site.url}${page.href}`,
         lastModified: new Date(),
     }))
 }

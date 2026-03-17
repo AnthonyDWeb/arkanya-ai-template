@@ -1,0 +1,53 @@
+[
+  {
+    "name": "Accueil",
+    "href": "/",
+    "title": "Accueil",
+    "description": "Découvrez notre site",
+    "index": true,
+    "sitemap": true,
+    "visible": true,
+    "type": "main"
+  },
+  {
+    "name": "Contact",
+    "href": "/contact",
+    "title": "Contact",
+    "description": "Contactez-nous",
+    "index": true,
+    "sitemap": true,
+    "visible": true,
+    "type": "main"
+  },
+
+  {
+    "name": "Mentions légales",
+    "href": "/mentions-legales",
+    "title": "Mentions légales",
+    "description": "Informations légales",
+    "index": false,
+    "sitemap": true,
+    "visible": true,
+    "type": "legal"
+  },
+  {
+    "name": "Politique de confidentialité",
+    "href": "/politique-confidentialite",
+    "title": "Politique de confidentialité",
+    "description": "Protection des données",
+    "index": false,
+    "sitemap": true,
+    "visible": true,
+    "type": "legal"
+  },
+  {
+    "name": "CGV",
+    "href": "/cgv",
+    "title": "Conditions générales de vente",
+    "description": "Conditions générales de vente",
+    "index": false,
+    "sitemap": true,
+    "visible": true,
+    "type": "legal"
+  }
+]

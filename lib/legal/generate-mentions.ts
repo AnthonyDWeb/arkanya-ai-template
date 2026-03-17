@@ -1,8 +1,8 @@
-import {legalConfig} from "../../config/legal"
+import {getLegal} from "@/lib/config/getLegal"
 
 export function generateMentionsLegales() {
 
-    const l = legalConfig
+    const l = getLegal()
 
     return `
 Éditeur du site

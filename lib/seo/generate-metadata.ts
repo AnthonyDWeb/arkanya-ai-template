@@ -1,39 +1,41 @@
-import {legalNavigation, navigation} from "../../config/navigation"
-import {siteConfig} from "../../config/site"
-import {defaultSEO} from "../../config/seo"
+import {getNavigation} from "@/lib/config/getNavigation"
+import {getSite} from "@/lib/config/getSite"
+import {getSEO} from "@/lib/config/getSEO"
 
 export function generateMetadataFromPath(path: string) {
 
-    const pages = [...navigation, ...legalNavigation]
+    const { all } = getNavigation()
+    const site = getSite()
+    const seo = getSEO()
 
-    const page = pages.find((p) => p.href === path)
+    const page = all.find((p) => p.href === path)
 
-    const title = page?.title ?? defaultSEO.title
-    const description = page?.description ?? defaultSEO.description
-    const index = page?.index ?? true
+    const title = page?.title || seo.title
+    const description = page?.description || seo.description
+    const index = page?.index ?? seo.index ?? true
 
-    const url = `${siteConfig.url}${path}`
+    const url = `${site.url}${path}`
 
     return {
         title: {
             default: title,
-            template: `%s | ${siteConfig.name}`,
+            template: `%s | ${site.name}`,
         },
 
         description,
 
-        metadataBase: new URL(siteConfig.url),
+        metadataBase: new URL(site.url),
 
         openGraph: {
             title,
             description,
             url,
-            siteName: siteConfig.name,
-            locale: siteConfig.locale,
+            siteName: site.name,
+            locale: site.locale,
             type: "website",
             images: [
                 {
-                    url: siteConfig.ogImage ?? "",
+                    url: seo.image || site.ogImage || "",
                 },
             ],
         },
@@ -45,7 +47,7 @@ export function generateMetadataFromPath(path: string) {
 
         authors: [
             {
-                name: siteConfig.author,
+                name: site.author,
             },
         ],
     }

@@ -2,40 +2,42 @@ import "./globals.css"
 
 import type {Metadata} from "next"
 
-import Providers from "../providers/providers"
+import Providers from "@/providers/providers"
 
-import Navbar from "../components/layout/navbar"
-import Footer from "../components/layout/footer"
+import Navbar from "@/components/layout/navbar"
+import Footer from "@/components/layout/footer"
 
-import {siteConfig} from "../config/site"
+import {getSite} from "@/lib/config/getSite"
+
+const site = getSite()
 
 export const metadata: Metadata = {
     title: {
-        default: siteConfig.name,
-        template: `%s | ${siteConfig.name}`,
+        default: site.name,
+        template: `%s | ${site.name}`,
     },
 
-    description: siteConfig.description,
+    description: site.description,
 
-    metadataBase: new URL(siteConfig.url),
+    metadataBase: new URL(site.url),
 
     openGraph: {
-        title: siteConfig.name,
-        description: siteConfig.description,
-        url: siteConfig.url,
-        siteName: siteConfig.name,
-        locale: siteConfig.locale,
+        title: site.name,
+        description: site.description,
+        url: site.url,
+        siteName: site.name,
+        locale: site.locale,
         type: "website",
         images: [
             {
-                url: siteConfig.ogImage ?? "",
+                url: site.ogImage ?? "",
             },
         ],
     },
 
     authors: [
         {
-            name: siteConfig.author,
+            name: site.author,
         },
     ],
 

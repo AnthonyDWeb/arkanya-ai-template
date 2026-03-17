@@ -1,0 +1,11 @@
+{
+  "name": "Arkanya",
+  "description": "Site généré par Arkanya AI",
+  "url": "https://example.com",
+  "author": "Arkanya",
+  "locale": "fr_FR",
+  "logo": "/logo.webp",
+  "logoMono": "/logo-mono.webp",
+  "logoSize": 36,
+  "ogImage": "/og-image.webp"
+}

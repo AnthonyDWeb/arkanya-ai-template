@@ -1,8 +1,8 @@
-import {legalConfig} from "../../config/legal"
+import {getLegal} from "@/lib/config/getLegal"
 
 export function generateCGV() {
 
-    const l = legalConfig
+    const l = getLegal()
 
     return `
 Article 1 – Objet

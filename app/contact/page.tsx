@@ -1,13 +1,12 @@
-import {generateMetadataFromPath} from "../../lib/seo/generate-metadata"
+import {generateMetadataFromPath} from "@/lib/seo/generate-metadata"
+import Contact from "@/components/sections/contact"
 
 export const metadata = generateMetadataFromPath("/contact")
 
 export default function Page() {
     return (
-        <section className="section">
-            <div className="container-main">
-                <h1>Contact</h1>
-            </div>
-        </section>
+        <>
+            <Contact />
+        </>
     )
 }

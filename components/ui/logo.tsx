@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
-import {siteConfig} from "../../config/site"
+import {getSite} from "@/lib/config/getSite"
 
 type Props = {
     variant?: "dark" | "light"
@@ -9,27 +9,29 @@ type Props = {
 
 export default function Logo({ variant = "dark" }: Props) {
 
+    const site = getSite()
+
     const src =
         variant === "light"
-            ? siteConfig.logoMono ?? siteConfig.logo
-            : siteConfig.logo
+            ? site.logoMono ?? site.logo
+            : site.logo
 
-    const size = siteConfig.logoSize ?? 36
+    const size = site.logoSize ?? 36
 
     return (
         <Link href="/" className="navbar-brand">
 
             <Image
                 src={src}
-                alt={siteConfig.name}
+                alt={site.name}
                 width={size}
                 height={size}
                 priority
             />
 
             <span className="navbar-name">
-        {siteConfig.name}
-      </span>
+                {site.name}
+            </span>
 
         </Link>
     )

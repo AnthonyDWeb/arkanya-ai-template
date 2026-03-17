@@ -3,5 +3,4 @@ export type SEOConfig = {
     description?: string
     image?: string
     index?: boolean
-    path?: string
 }

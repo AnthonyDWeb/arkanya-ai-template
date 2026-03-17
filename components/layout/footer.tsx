@@ -1,9 +1,13 @@
 import Link from "next/link"
 
-import {legalNavigation, navigation} from "../../config/navigation"
-import {siteConfig} from "../../config/site"
+import {getSite} from "@/lib/config/getSite"
+import {getNavigation} from "@/lib/config/getNavigation"
 
 export default function Footer() {
+
+    const site = getSite()
+    const { main, legal } = getNavigation()
+
     return (
         <div className="footer">
 
@@ -11,21 +15,21 @@ export default function Footer() {
 
                 <div className="footer-brand">
 
-                    {siteConfig.logo && (
+                    {site.logo && (
                         <img
-                            src={siteConfig.logo}
-                            alt={siteConfig.name}
+                            src={site.logo}
+                            alt={site.name}
                             width={44}
                             height={44}
                         />
                     )}
 
                     <p className="footer-name">
-                        {siteConfig.name}
+                        {site.name}
                     </p>
 
                     <p className="footer-desc">
-                        {siteConfig.description}
+                        {site.description}
                     </p>
 
                 </div>
@@ -39,7 +43,7 @@ export default function Footer() {
                         </p>
 
                         <ul>
-                            {navigation.map((item) => (
+                            {main.map((item) => (
                                 <li key={item.href}>
                                     <Link href={item.href}>
                                         {item.name}
@@ -57,7 +61,7 @@ export default function Footer() {
                         </p>
 
                         <ul>
-                            {legalNavigation.map((item) => (
+                            {legal.map((item) => (
                                 <li key={item.href}>
                                     <Link href={item.href}>
                                         {item.name}
@@ -77,7 +81,7 @@ export default function Footer() {
                 <div className="container-main footer-bottom-inner">
 
                     <p>
-                        © {new Date().getFullYear()} {siteConfig.name}
+                        © {new Date().getFullYear()} {site.name}
                     </p>
 
                     <p>

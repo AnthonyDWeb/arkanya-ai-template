@@ -1,11 +1,14 @@
 import Link from "next/link"
 
-import {navigation} from "../../config/navigation"
+import {getNavigation} from "@/lib/config/getNavigation"
 
 import Logo from "../ui/logo"
 import NavbarToggle from "../ui/navbar-toggle"
 
 export default function Navbar() {
+
+    const { main } = getNavigation()
+
     return (
         <nav className="navbar">
 
@@ -19,7 +22,7 @@ export default function Navbar() {
 
                     <ul className="navbar-links">
 
-                        {navigation.map((item) => (
+                        {main.map((item) => (
                             <li key={item.href}>
                                 <Link href={item.href}>
                                     {item.name}
@@ -29,7 +32,7 @@ export default function Navbar() {
 
                     </ul>
 
-                    <NavbarToggle navigation={navigation} />
+                    <NavbarToggle navigation={main} />
 
                 </div>
 

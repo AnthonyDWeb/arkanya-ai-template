@@ -1,8 +1,11 @@
 import type {MetadataRoute} from "next"
 
-import {siteConfig} from "../config/site"
+import {getSite} from "@/lib/config/getSite"
 
 export default function robots(): MetadataRoute.Robots {
+
+    const site = getSite()
+
     return {
         rules: [
             {
@@ -10,6 +13,6 @@ export default function robots(): MetadataRoute.Robots {
                 allow: "/",
             },
         ],
-        sitemap: `${siteConfig.url}/sitemap.xml`,
+        sitemap: `${site.url}/sitemap.xml`,
     }
 }
