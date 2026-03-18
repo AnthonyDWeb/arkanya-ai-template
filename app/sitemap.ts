@@ -5,11 +5,15 @@ import {getSite} from "@/lib/config/getSite"
 
 export default function sitemap(): MetadataRoute.Sitemap {
 
-    const navigation = getNavigation()
+    const { all } = getNavigation()
     const site = getSite()
 
-    return navigation.map((page) => ({
+    const pages = all.filter(p => p.sitemap !== false)
+
+    return pages.map((page) => ({
+
         url: `${site.url}${page.href}`,
         lastModified: new Date(),
+
     }))
 }

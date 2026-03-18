@@ -1,5 +1,3 @@
-"use client"
-
 import {getLegal} from "@/lib/config/getLegal"
 
 export default function Contact() {
@@ -15,17 +13,9 @@ export default function Contact() {
 
                 <div className="mt-6 flex flex-col gap-3">
 
-                    {legal.email && (
-                        <p>Email : {legal.email}</p>
-                    )}
-
-                    {legal.phone && (
-                        <p>Téléphone : {legal.phone}</p>
-                    )}
-
-                    {legal.address && (
-                        <p>Adresse : {legal.address}</p>
-                    )}
+                    {legal.email && <p>Email : {legal.email}</p>}
+                    {legal.phone && <p>Téléphone : {legal.phone}</p>}
+                    {legal.address && <p>Adresse : {legal.address}</p>}
 
                 </div>
 
