@@ -1,15 +1,15 @@
-
-import {getNavigation} from "@/lib/config/getNavigation"
+import {getSitemapNavigation} from "@/lib/config/getNavigation"
 import {getSite} from "@/lib/config/getSite"
 
-export default function sitemap() {
+type SitemapFprops = {url: string, lastModified: Date};
 
-    const { all } = getNavigation()
+export default function sitemap(): SitemapFprops[] {
+
     const site = getSite()
 
-    const pages = all.filter(p => p.sitemap !== false)
+    const pages = getSitemapNavigation();
 
-    return pages.map((page) => ({
+    return pages.map((page): SitemapFprops => ({
 
         url: `${site.url}${page.href}`,
         lastModified: new Date(),
