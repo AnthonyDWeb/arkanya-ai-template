@@ -1,4 +1,7 @@
-import navigation from "@/config/navigation.json"
+import navigationJson from "@/config/navigation.json"
+import { NavigationItem } from "@/types/navigation"
+
+const navigation = navigationJson as NavigationItem[]
 
 export function getNavigation() {
 
@@ -18,6 +21,6 @@ export function getNavigation() {
 }
 
 // SEO / sitemap
-export function getSitemapNavigation() {
+export function getSitemapNavigation(): NavigationItem[] {
     return navigation.filter((p) => p.sitemap !== false)
 }

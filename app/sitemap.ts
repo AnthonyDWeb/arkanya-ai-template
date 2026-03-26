@@ -1,9 +1,8 @@
-import type {MetadataRoute} from "next"
 
 import {getNavigation} from "@/lib/config/getNavigation"
 import {getSite} from "@/lib/config/getSite"
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default function sitemap() {
 
     const { all } = getNavigation()
     const site = getSite()
